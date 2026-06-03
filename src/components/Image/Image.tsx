@@ -7,6 +7,7 @@ type ImageProps = {
   width?: string;
   height?: string;
   hasShadow?: boolean;
+  hasBorder?: boolean;
 } & ImgHTMLAttributes<HTMLImageElement>;
 
 export default function Image({
@@ -15,10 +16,11 @@ export default function Image({
   width = '350px',
   height = '350px',
   hasShadow = false,
+  hasBorder = true,
   className = '',
   ...props
 }: ImageProps) {
-  const defaultStyle = `object-cover border-black border-4`;
+  const defaultStyle = `object-cover ${hasBorder ? 'border-black border-4' : ''}`;
   const shadowStyle = hasShadow ? 'shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]' : '';
 
   return (

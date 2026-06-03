@@ -21,7 +21,7 @@ export default function Button({
   uppercase = false,
   ...props
 }: ButtonProps) {
-  const defaultStyle = 'py-1 px-2 font-display text-lg';
+  const defaultStyle = 'py-1 px-2 h-fit font-display text-lg';
   const shadowStyle = hasShadow ? 'shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]' : '';
   const disabledStyle = disabled ? 'cursor-default' : 'cursor-pointer';
   const borderStyle = `border-${borderSize} border-${borderColor}`;

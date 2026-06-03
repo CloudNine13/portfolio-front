@@ -9,8 +9,8 @@ export default function HeroSection() {
   const heroContainerStyle = 'dot-bg w-full flex items-center justify-center border-b-4 gap-20';
   const textContainerStyle = 'flex flex-col gap-13';
   const imageContainerStyle = 'relative flex flex-col flex items-center justify-center';
-  const descriptionStyle = 'max-w-xs md:max-w-sm lg:max-w-md';
-  const highlightStyle = 'text-yellow bg-black w-max py-8 px-4';
+  const descriptionStyle = 'max-w-xxs md:max-w-xs lg:max-w-sm text-justify';
+  const highlightStyle = 'text-yellow bg-black w-max py-4 px-6 italic';
   const overlayImageStyle = 'absolute -top-6 -right-4 bg-red p-1.5';
   const heroCalculatedHeight = { height: 'calc(100vh - 80px)' };
 
@@ -22,7 +22,7 @@ export default function HeroSection() {
           <h1 className={`${headerStyle} ${highlightStyle}`}>MERN</h1>
           <h1 className={headerStyle}>Developer</h1>
         </div>
-        <div className="flex flex-row gap-5">
+        <div className="flex flex-row gap-5 items-center">
           <Button
             backgroundColor="bg-white"
             borderSize={4}
