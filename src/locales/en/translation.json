@@ -1,4 +1,5 @@
 {
+  "WIP": "Work in progress...",
   "PERSONAL_INFO": {
     "NAME": "Igor",
     "SURNAME": "Dzichkovskii",
@@ -10,5 +11,9 @@
     "PROJECTS": "Projects",
     "CONTACT": "Contact",
     "BUTTON": "Hire me!"
+  },
+  "HERO_SECTION": {
+    "DESCRIPTION": "Building high-performance web architectures through geometric precision and functional minimalism.",
+    "EXPERIENCE": ">5+ years of experience"
   }
 }
