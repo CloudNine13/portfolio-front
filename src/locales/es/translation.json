@@ -3,5 +3,12 @@
     "NAME": "Igor",
     "SURNAME": "Dzichkovskii",
     "FULL_NAME": "Igor Dzichkovskii"
+  },
+  "NAVBAR": {
+    "ABOUT": "Sobre mí",
+    "TECH": "Tech",
+    "PROJECTS": "Proyectos",
+    "CONTACT": "Contacto",
+    "BUTTON": "Contratame!"
   }
 }
