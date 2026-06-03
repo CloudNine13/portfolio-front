@@ -1,4 +1,5 @@
 {
+  "WIP": "En construcción...",
   "PERSONAL_INFO": {
     "NAME": "Igor",
     "SURNAME": "Dzichkovskii",
@@ -10,5 +11,9 @@
     "PROJECTS": "Proyectos",
     "CONTACT": "Contacto",
     "BUTTON": "Contratame!"
+  },
+  "HERO_SECTION": {
+    "DESCRIPTION": "Construyendo arquitecturas web de alto rendimiento a través de precisión geométrica y minimalismo funcional.",
+    "EXPERIENCE": ">5+ años de experiencia"
   }
 }

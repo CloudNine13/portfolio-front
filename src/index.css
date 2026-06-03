@@ -6,7 +6,14 @@
   --color-red: #e63b2e;
   --color-blue: #0055ff;
   --color-white: #f5f0e8;
+  --color-dot-white: #e6e1d9;
   --color-white-secondary: #ffffff;
+}
+
+.dot-bg {
+  background-image: radial-gradient(var(--color-dot-white) 8%, transparent 10%);
+  background-size: 28px 28px;
+  background-color: var(--color-white);
 }
 
 .font-display {
