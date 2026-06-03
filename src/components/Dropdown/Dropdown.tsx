@@ -1,0 +1,73 @@
+import { useState, useRef, useEffect } from 'react';
+
+export type SelectOption = {
+  value: string;
+  shorthand: string;
+  label: string;
+  description?: string;
+};
+
+type DropdownProps = {
+  options: SelectOption[];
+  value: string;
+  onChange: (value: string) => void;
+};
+
+export default function Dropdown({ options, value, onChange }: DropdownProps) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [displayValue, setDisplayValue] = useState(value);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const handleSelect = (optionValue: string) => {
+    onChange(optionValue);
+    const selectedOption = options.find((opt) => opt.value === optionValue);
+    const displayValue = selectedOption.shorthand.toUpperCase() || '';
+    setDisplayValue(displayValue);
+    setIsOpen(false);
+  };
+
+  const shadowStyle = 'shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]';
+  const dropdownStyle = `${shadowStyle} w-fit flex items-center justify-between bg-${isOpen ? 'black' : 'white'} border-4 border-black px-4 py-2 font-bold text-${isOpen ? 'white' : 'black'} focus:outline-none transition duration-300 ease-in-out`;
+  const arrowStyle = `transition-transform duration-200 ${isOpen ? 'rotate-90' : ''}`;
+  const optionListStyle = `${shadowStyle} absolute z-50 w-fit mt-2 bg-white border-4 border-black max-h-60 overflow-y-auto`;
+  const listItemStyle =
+    'cursor-pointer px-4 py-3 border-b-2 border-black last:border-b-0 hover:bg-black hover:text-white transition-colors';
+  const descriptionStyle = 'text-sm text-gray-600 font-normal';
+
+  return (
+    <div className={`relative w-35`} ref={dropdownRef}>
+      <button type="button" onClick={() => setIsOpen(!isOpen)} className={dropdownStyle}>
+        <span className="font-display pr-3">{displayValue}</span>
+        <span className={arrowStyle}>▼</span>
+      </button>
+      {isOpen && (
+        <ul className={optionListStyle}>
+          {options.map((option) => (
+            <li
+              key={option.value}
+              onClick={() => handleSelect(option.value)}
+              className={listItemStyle}
+            >
+              <div className="flex flex-col">
+                <span className="font-bold">{option.label}</span>
+                {option.description && (
+                  <span className={descriptionStyle}>{option.description}</span>
+                )}
+              </div>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}
