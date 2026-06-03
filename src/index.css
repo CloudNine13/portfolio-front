@@ -1,1 +1,27 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+@theme {
+  --color-black: #1a1a1a;
+  --color-yellow: #ffcc00;
+  --color-red: #e63b2e;
+  --color-blue: #0055ff;
+  --color-white: #f5f0e8;
+  --color-white-secondary: #ffffff;
+}
+
+.font-display {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+.font-sans {
+  font-family: 'Inter', sans-serif;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
