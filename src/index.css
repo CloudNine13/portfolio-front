@@ -6,9 +6,11 @@
   --color-yellow: #ffcc00;
   --color-red: #e63b2e;
   --color-blue: #0055ff;
+  --color-green: #18531e;
   --color-white: #f5f0e8;
   --color-dot-white: #e6e1d9;
   --color-white-secondary: #ffffff;
+  --color-dark-gray: #323232;
 }
 
 .dot-bg {

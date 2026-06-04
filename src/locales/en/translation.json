@@ -23,5 +23,14 @@
     "EXPRESS": "Creating Middleware & RESTful Systems",
     "REACT": "Declarative UI & State Flow Management",
     "NODE_JS": "Asynchronous Runtime & Scalability"
+  },
+  "HISTORY_SECTION": {
+    "SECTION_TITLE": "HISTORY_",
+    "DATES": {
+      "DATE_1": "oct. 2025 — Present",
+      "DATE_2": "jul. 2022 — oct. 2025",
+      "DATE_3": "aug. 2021 — jul. 2022",
+      "DATE_4": "may 2019 — jul. 2021"
+    }
   }
 }

@@ -1,7 +1,8 @@
 import { NavBar } from '../NavBar';
 import { HeroSection } from '../HeroSection';
-import { WIP } from '../WIP';
 import { TechSection } from '../TechSection';
+import { HistorySection } from '../HistorySection';
+import { WIP } from '../WIP';
 
 export default function MainView() {
   const mainStyle = 'h-screen pt-20 overflow-y-auto scrollbar-hide';
@@ -12,6 +13,7 @@ export default function MainView() {
       <main className={mainStyle}>
         <HeroSection />
         <TechSection />
+        <HistorySection />
         <WIP />
       </main>
     </>
