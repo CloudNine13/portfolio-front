@@ -13,23 +13,22 @@ type ImageProps = {
 export default function Image({
   src = fallbackImage,
   alt = 'generic image',
-  width = '350px',
-  height = '350px',
+  width = '300px',
+  height = '400px',
   hasShadow = false,
   hasBorder = true,
   className = '',
   ...props
 }: ImageProps) {
-  const defaultStyle = `object-cover ${hasBorder ? 'border-black border-4' : ''}`;
+  const defaultStyle = `object-cover object-center will-change-transform ${hasBorder ? 'border-black border-4' : ''}`;
   const shadowStyle = hasShadow ? 'shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]' : '';
 
   return (
     <img
       src={src || fallbackImage}
       alt={alt}
+      style={{ width, height, imageRendering: 'smooth' }}
       className={`${defaultStyle} ${shadowStyle} ${className}`.trim()}
-      width={width}
-      height={height}
       {...props}
     />
   );

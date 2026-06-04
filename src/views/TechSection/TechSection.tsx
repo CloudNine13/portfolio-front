@@ -5,12 +5,12 @@ export default function TechSection() {
   const { t } = useTranslation();
   const techSectionStyle =
     'h-fit flex flex-col bg-yellow border-b-4 border-black pt-25 pb-45 px-15 gap-20';
-  const sectionTitleStyle = 'text-8xl font-bold font-display';
+  const sectionTitleStyle = 'text-8xl font-bold font-display tracking-tight';
   const gridContainerStyle = 'flex flex-wrap justify-center';
   const gridStyle = 'grid grid-cols-4 h-fit w-full bg-white';
   const gridItemStyle = 'border-4 border-r-0 last:border-r-4 border-black p-8';
-  const techTitleStyle = 'font-display text-5xl font-bold';
-  const techDescriptionStyle = 'text-xl pt-10';
+  const itemTitleStyle = 'font-display text-5xl font-bold';
+  const itemDescriptionStyle = 'text-xl pt-10';
 
   const gridItems = [
     {
@@ -29,7 +29,7 @@ export default function TechSection() {
       description: t('TECH_SECTION.REACT'),
     },
     {
-      icon: 'join_left',
+      icon: 'network_intel_node',
       key: 'Node.JS',
       description: t('TECH_SECTION.NODE_JS'),
     },
@@ -44,8 +44,8 @@ export default function TechSection() {
             return (
               <div className={gridItemStyle} key={elem.key}>
                 <Icon size="5em">{elem.icon}</Icon>
-                <h1 className={techTitleStyle}>{elem.key}</h1>
-                <h3 className={techDescriptionStyle}>{elem.description}</h3>
+                <h1 className={itemTitleStyle}>{elem.key}</h1>
+                <h3 className={itemDescriptionStyle}>{elem.description}</h3>
               </div>
             );
           })}
