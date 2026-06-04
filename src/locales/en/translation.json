@@ -10,10 +10,18 @@
     "TECH": "Tech",
     "PROJECTS": "Projects",
     "CONTACT": "Contact",
+    "INFO_TITLE": "PORTFOLI0_V5",
     "BUTTON": "Contact!"
   },
   "HERO_SECTION": {
     "DESCRIPTION": "Building high-performance web architectures through geometric precision and functional minimalism.",
     "EXPERIENCE": ">5+ years of experience"
+  },
+  "TECH_SECTION": {
+    "SECTION_TITLE": "C0RE_STACK",
+    "MONGODB": "Implementing NoSQL (SQL included) Architecture & Schema design",
+    "EXPRESS": "Creating Middleware & RESTful Systems",
+    "REACT": "Declarative UI & State Flow Management",
+    "NODE_JS": "Asynchronous Runtime & Scalability"
   }
 }

@@ -1,6 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import { Button, Image } from '../../components';
-import terminalIcon from '../../assets/terminal.svg';
+import { Button, Icon, Image } from '../../components';
 
 export default function HeroSection() {
   const { t } = useTranslation();
@@ -8,11 +7,13 @@ export default function HeroSection() {
   const headerStyle = 'text-9xl font-bold font-display leading-23 uppercase';
   const heroContainerStyle = 'dot-bg w-full flex items-center justify-center border-b-4 gap-20';
   const textContainerStyle = 'flex flex-col gap-13';
-  const imageContainerStyle = 'relative flex flex-col flex items-center justify-center';
+  const imageContainerStyle = 'relative flex flex-col gap-3 flex items-center justify-center';
   const descriptionStyle = 'max-w-xxs md:max-w-xs lg:max-w-sm text-justify';
   const highlightStyle = 'text-yellow bg-black w-max py-4 px-6 italic';
-  const overlayImageStyle = 'absolute -top-6 -right-4 bg-red p-1.5';
+  const nameStyle = 'text-3xl font-display tracking-tighter';
+  const overlayIconStyle = 'absolute -top-6 -right-4 bg-red p-1.5 text-white';
   const heroCalculatedHeight = { height: 'calc(100vh - 80px)' };
+  const buttonContainerStyle = 'flex flex-row gap-5 items-center';
 
   return (
     <div className={heroContainerStyle} style={heroCalculatedHeight}>
@@ -22,7 +23,7 @@ export default function HeroSection() {
           <h1 className={`${headerStyle} ${highlightStyle}`}>MERN</h1>
           <h1 className={headerStyle}>Developer</h1>
         </div>
-        <div className="flex flex-row gap-5 items-center">
+        <div className={buttonContainerStyle}>
           <Button
             backgroundColor="bg-white"
             borderSize={4}
@@ -38,15 +39,12 @@ export default function HeroSection() {
       </div>
       <div className={imageContainerStyle}>
         <div className="relative">
-          <Image
-            src={terminalIcon}
-            alt="Overlay"
-            width="55px"
-            height="55px"
-            className={overlayImageStyle}
-          />
+          <Icon className={overlayIconStyle} size={'2em'} hasBorder>
+            terminal
+          </Icon>
           <Image src="" alt="Hero" hasShadow />
         </div>
+        <p className={nameStyle}>{t('PERSONAL_INFO.FULL_NAME')}</p>
       </div>
     </div>
   );
