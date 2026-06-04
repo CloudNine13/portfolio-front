@@ -11,9 +11,12 @@ export default function NavBar() {
 
   const languageOptions = [
     { value: 'es', shorthand: '🇪🇸 Esp', label: '🇪🇸 Español' },
-    { value: 'ru', shorthand: '🇷🇺 Rus', label: '🇷🇺 Русский' },
+    { value: 'ru', shorthand: '🇷🇺 Рус', label: '🇷🇺 Русский' },
     { value: 'en', shorthand: '🇺🇸 Eng', label: '🇺🇸 English' },
   ];
+
+  const dropdownValue =
+    languageOptions.find((option) => option.value === language)?.shorthand.toUpperCase() || '';
 
   const infoStyle = 'font-display text-3xl font-bold';
   const headerStyle = 'flex items-center gap-4';
@@ -60,10 +63,7 @@ export default function NavBar() {
       <div className="flex">
         <Dropdown
           options={languageOptions}
-          value={
-            languageOptions.find((option) => option.value === language)?.shorthand.toUpperCase() ||
-            ''
-          }
+          value={dropdownValue}
           onChange={(element) => {
             setLanguage(element);
             i18n.changeLanguage(element);

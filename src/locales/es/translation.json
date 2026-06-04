@@ -15,5 +15,8 @@
   "HERO_SECTION": {
     "DESCRIPTION": "Construyendo arquitecturas web de alto rendimiento a través de precisión geométrica y minimalismo funcional.",
     "EXPERIENCE": ">5+ años de experiencia"
+  },
+  "TECH_SECTION": {
+    "SECTION_TITLE": "STACK_TECNICO"
   }
 }
