@@ -10,6 +10,7 @@
     "TECH": "Tech",
     "PROJECTS": "Proyectos",
     "CONTACT": "Contacto",
+    "INFO_TITLE": "P0RTFOLIO_V5",
     "BUTTON": "Conocerme!"
   },
   "HERO_SECTION": {
@@ -17,6 +18,10 @@
     "EXPERIENCE": ">5+ años de experiencia"
   },
   "TECH_SECTION": {
-    "SECTION_TITLE": "STACK_TECNICO"
+    "SECTION_TITLE": "STACK_TECNIC0",
+    "MONGODB": "Implementación de arquitecturas NoSQL (con SQL incluido) y diseño de esquemas de BD",
+    "EXPRESS": "Desarrollo de Middleware y sistemas RESTful",
+    "REACT": "UI declarativa y gestión del flujo de estado",
+    "NODE_JS": "Runtime asíncrono y escalabilidad"
   }
 }

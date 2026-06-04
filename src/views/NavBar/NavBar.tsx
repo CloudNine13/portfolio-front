@@ -6,8 +6,9 @@ import coloredTerminalIcon from '../../assets/terminal-colored.svg';
 
 export default function NavBar() {
   const { t, i18n } = useTranslation();
+  const fallbackLanguage = i18n.language || 'en';
   const [activeIndex, setActiveIndex] = useState(0);
-  const [language, setLanguage] = useState(i18n.language || 'en');
+  const [language, setLanguage] = useState(fallbackLanguage);
 
   const languageOptions = [
     { value: 'es', shorthand: '🇪🇸 Esp', label: '🇪🇸 Español' },
@@ -16,7 +17,8 @@ export default function NavBar() {
   ];
 
   const dropdownValue =
-    languageOptions.find((option) => option.value === language)?.shorthand.toUpperCase() || '';
+    languageOptions.find((option) => option.value === language)?.shorthand.toUpperCase() ||
+    fallbackLanguage;
 
   const infoStyle = 'font-display text-3xl font-bold';
   const headerStyle = 'flex items-center gap-4';
@@ -47,12 +49,12 @@ export default function NavBar() {
           height="60px"
           hasBorder={false}
         />
-        <div className={infoStyle}>PORTFOLIO_V5</div>
+        <div className={infoStyle}>{t('NAVBAR.INFO_TITLE')}</div>
       </div>
       <div className={selectionStyle}>
         {menuItems.map((item, index) => (
           <div
-            key={index}
+            key={item.key}
             className={getMenuItemStyle(index === activeIndex)}
             onClick={() => setActiveIndex(index)}
           >

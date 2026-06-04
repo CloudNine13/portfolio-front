@@ -13,6 +13,7 @@ export default function HeroSection() {
   const nameStyle = 'text-3xl font-display tracking-tighter';
   const overlayIconStyle = 'absolute -top-6 -right-4 bg-red p-1.5 text-white';
   const heroCalculatedHeight = { height: 'calc(100vh - 80px)' };
+  const buttonContainerStyle = 'flex flex-row gap-5 items-center';
 
   return (
     <div className={heroContainerStyle} style={heroCalculatedHeight}>
@@ -22,7 +23,7 @@ export default function HeroSection() {
           <h1 className={`${headerStyle} ${highlightStyle}`}>MERN</h1>
           <h1 className={headerStyle}>Developer</h1>
         </div>
-        <div className="flex flex-row gap-5 items-center">
+        <div className={buttonContainerStyle}>
           <Button
             backgroundColor="bg-white"
             borderSize={4}

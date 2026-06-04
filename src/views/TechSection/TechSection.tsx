@@ -4,32 +4,34 @@ import { Icon } from '../../components';
 export default function TechSection() {
   const { t } = useTranslation();
   const techSectionStyle =
-    'h-fit flex flex-col bg-yellow border-b-4 border-black py-20 px-10 gap-10';
-  const sectionTitleStyle = 'text-7xl font-bold font-display';
-  const gridContainerStyle = 'flex flex-wrap gap-5 justify-center';
+    'h-fit flex flex-col bg-yellow border-b-4 border-black pt-25 pb-45 px-15 gap-20';
+  const sectionTitleStyle = 'text-8xl font-bold font-display';
+  const gridContainerStyle = 'flex flex-wrap justify-center';
   const gridStyle = 'grid grid-cols-4 h-fit w-full bg-white';
   const gridItemStyle = 'border-4 border-r-0 last:border-r-4 border-black p-8';
+  const techTitleStyle = 'font-display text-5xl font-bold';
+  const techDescriptionStyle = 'text-xl pt-10';
 
   const gridItems = [
     {
       icon: 'data_table',
       key: 'MongoDB',
-      description: 'NoSQL (SQL included) Architecture & Schema design',
+      description: t('TECH_SECTION.MONGODB'),
     },
     {
       icon: 'api',
       key: 'Express',
-      description: 'Middleware & RESTful Systems',
+      description: t('TECH_SECTION.EXPRESS'),
     },
     {
       icon: 'web',
       key: 'React',
-      description: 'Declarative UI & State Flow',
+      description: t('TECH_SECTION.REACT'),
     },
     {
       icon: 'join_left',
       key: 'Node.JS',
-      description: 'Asynchronous Runtime & Scaling',
+      description: t('TECH_SECTION.NODE_JS'),
     },
   ];
 
@@ -40,9 +42,10 @@ export default function TechSection() {
         <div className={gridStyle}>
           {gridItems.map((elem) => {
             return (
-              <div className={gridItemStyle}>
+              <div className={gridItemStyle} key={elem.key}>
                 <Icon size="5em">{elem.icon}</Icon>
-                <h1 className="font-display text-5xl font-bold">{elem.key}</h1>
+                <h1 className={techTitleStyle}>{elem.key}</h1>
+                <h3 className={techDescriptionStyle}>{elem.description}</h3>
               </div>
             );
           })}
