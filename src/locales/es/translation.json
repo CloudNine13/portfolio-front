@@ -1,10 +1,5 @@
 {
   "WIP": "En construcción...",
-  "PERSONAL_INFO": {
-    "NAME": "Igor",
-    "SURNAME": "Dzichkovskii",
-    "FULL_NAME": "Igor Dzichkovskii"
-  },
   "NAVBAR": {
     "ABOUT": "Sobre mí",
     "TECH": "Tech",
@@ -15,7 +10,12 @@
   },
   "HERO_SECTION": {
     "DESCRIPTION": "Construyendo arquitecturas web de alto rendimiento a través de precisión geométrica y minimalismo funcional.",
-    "EXPERIENCE": ">5+ años de experiencia"
+    "EXPERIENCE": ">5+ años de experiencia",
+    "PERSONAL_INFO": {
+      "NAME": "Igor",
+      "SURNAME": "Dzichkovskii",
+      "FULL_NAME": "Igor Dzichkovskii"
+    }
   },
   "TECH_SECTION": {
     "SECTION_TITLE": "STACK_TECNICO",
@@ -31,6 +31,19 @@
       "DATE_2": "jul. 2022 — oct. 2025",
       "DATE_3": "ago. 2021 — jul. 2022",
       "DATE_4": "may 2019 — jul. 2021"
+    },
+    "DESCRIPTIONS": {
+      "DESCRIPTION_1": "Desarrollé aplicaciones web de alto rendimiento utilizando el stack MERN y Node.js en un equipo distribuido. Me enfoqué en construir arquitecturas backend escalables, implementar flujos de trabajo transaccionales seguros y optimizar el rendimiento de la plataforma.",
+      "DESCRIPTION_2": "Desarrollé la arquitectura frontend para tres aplicaciones especializadas en trading de bolsa usando React y TypeScript. Gestioné capas densas de presentación de datos con AG Grid, estilos con Styled Components y establecí comunicación de baja latencia con el backend mediante gRPC. Creé componentes y hooks reutilizables, escribí tests unitarios y de integración exhaustivos, y realicé una refactorización extensa de código legacy. Creé entornos de prueba locales en contenedores Docker usando mocks de datos JSON personalizados de más de 5k-7k líneas. Gestioné flujos CI/CD con Jenkins, BlueOcean, CloudBees, Bitbucket y JIRA.",
+      "DESCRIPTION_3": "Trabajé como contratista independiente entregando aplicaciones web full-stack de principio a fin usando el stack MERN. Lideré la arquitectura de un Mapa Interactivo para el seguimiento de localizaciones de rodaje en tiempo real con filtrado avanzado, junto a un sistema de almacenamiento de archivos multimedia de alta disponibilidad. Diseñé arquitecturas RESTful con Node.js y Express, construí interfaces reactivas con React Hooks y Context API, optimicé el rendimiento de las consultas en MongoDB usando índices y agregaciones precisas, y automaticé despliegues con Docker y scripts de Shell Unix.",
+      "DESCRIPTION_4": "Gestioné infraestructuras de pruebas QA manuales y automatizadas, análisis de datos, administración de bases de datos y revisiones de código. Escribí scripts de automatización y lógica backend en múltiples entornos usando Python, JavaScript (Node.js) y Ruby on Rails. Desarrollé más de 40 tests automatizados para plataformas iOS usando Swift. Construí aplicaciones nativas para Android con Kotlin y Java para integrar APIs complejas de terceros (Google Maps, Firebase). Administré bases de datos relacionales y no relacionales, incluyendo MongoDB, SQLite y PostgreSQL, utilizando Docker y entornos Shell Unix."
     }
+  },
+  "PROJECTS_SECTION": {
+    "SECTION_TITLE": "PROYECTOS_EJEMPLO",
+    "DASHBOARD_TITLE": "Dashboard",
+    "DASHBOARD_DESCRIPTION": "Dashboard de información de trading construido con stack MERN para gestionar y visualizar datos de trading. Incluye actualización de datos, gráficos interactivos y autenticación de usuarios. Construido con React, TypeScript, Tailwind, Node.js y Express.js.",
+    "PAIN_TRACKER_TITLE": "Pain Tracker",
+    "PAIN_TRACKER_DESCRIPTION": "Aplicación de seguimiento de dolor construida con React, hl7 fhir, NestJS, y PostgreSQL. Incluye seguimiento de niveles de dolor, gestión de medicamentos y historial de pacientes. Construido con React, hl7 fhir, NestJS y PostgreSQL."
   }
 }

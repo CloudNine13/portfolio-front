@@ -10,40 +10,40 @@ export type TimelineItemProps = {
   pinColor: string;
 };
 
-export default function HistorySection() {
-  const { t } = useTranslation();
+export default function History() {
+  const { t } = useTranslation('translation', { keyPrefix: 'HISTORY_SECTION' });
 
   const listItems: TimelineItemProps[] = [
     {
       id: 1,
-      date: t('HISTORY_SECTION.DATES.DATE_1'),
+      date: t('DATES.DATE_1'),
       role: 'Full Stack (MERN) Developer',
       company: 'Allfunds Bank',
-      description: t('TECH_SECTION.MONGODB'),
+      description: t('DESCRIPTIONS.DESCRIPTION_1'),
       pinColor: 'red',
     },
     {
       id: 2,
-      date: t('HISTORY_SECTION.DATES.DATE_2'),
+      date: t('DATES.DATE_2'),
       role: 'Frontend Developer',
       company: 'Sopra Steria',
-      description: t('TECH_SECTION.EXPRESS'),
+      description: t('DESCRIPTIONS.DESCRIPTION_2'),
       pinColor: 'blue',
     },
     {
       id: 3,
-      date: t('HISTORY_SECTION.DATES.DATE_3'),
+      date: t('DATES.DATE_3'),
       role: 'Full Stack (React + Flask) Developer',
       company: 'Ukpik Productions',
-      description: t('TECH_SECTION.REACT'),
+      description: t('DESCRIPTIONS.DESCRIPTION_3'),
       pinColor: 'green',
     },
     {
       id: 4,
-      date: t('HISTORY_SECTION.DATES.DATE_4'),
+      date: t('DATES.DATE_4'),
       role: 'Junior Developer & QA Technician',
       company: 'Camillion',
-      description: t('TECH_SECTION.NODE_JS'),
+      description: t('DESCRIPTIONS.DESCRIPTION_4'),
       pinColor: 'yellow',
     },
   ];
@@ -60,7 +60,7 @@ export default function HistorySection() {
     <div className={historyContainerStyle}>
       <div className={titleContainerStyle}>
         <div className={stickyContainerStyle}>
-          <h1 className={titleStyle}>{t('HISTORY_SECTION.SECTION_TITLE')}</h1>
+          <h1 className={titleStyle}>{t('SECTION_TITLE')}</h1>
         </div>
       </div>
       <div className="flex flex-col gap-15">

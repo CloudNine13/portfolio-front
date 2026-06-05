@@ -1,3 +1,3 @@
 export { Button } from './Button';
-export { Image } from './Image';
+export { CustomImage } from './CustomImage';
 export { Icon } from './Icon';

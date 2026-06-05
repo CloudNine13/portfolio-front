@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button, Image } from '../../components';
+import { Button, CustomImage } from '../../components';
 import Dropdown from '../../components/Dropdown/Dropdown';
 import coloredTerminalIcon from '../../assets/terminal-colored.svg';
 
@@ -42,7 +42,7 @@ export default function NavBar() {
   return (
     <div className={containerStyle}>
       <div className={headerStyle}>
-        <Image
+        <CustomImage
           src={coloredTerminalIcon}
           alt="Terminal Icon"
           width="60px"
