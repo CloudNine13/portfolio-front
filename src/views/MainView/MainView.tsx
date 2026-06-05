@@ -1,19 +1,18 @@
 import { NavBar } from '../NavBar';
-import { HeroSection } from '../HeroSection';
-import { TechSection } from '../TechSection';
-import { HistorySection } from '../HistorySection';
+import { Hero, Tech, History, Projects } from '../Sections';
 import { WIP } from '../WIP';
 
 export default function MainView() {
-  const mainStyle = 'h-screen pt-20 overflow-y-auto scrollbar-hide';
+  const sectionsContainerStyle = 'h-screen pt-20 overflow-y-auto scrollbar-hide';
 
   return (
     <>
       <NavBar />
-      <main className={mainStyle}>
-        <HeroSection />
-        <TechSection />
-        <HistorySection />
+      <main className={sectionsContainerStyle}>
+        <Hero />
+        <Tech />
+        <History />
+        <Projects />
         <WIP />
       </main>
     </>

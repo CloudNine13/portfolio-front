@@ -8,27 +8,30 @@ type ImageProps = {
   height?: string;
   hasShadow?: boolean;
   hasBorder?: boolean;
+  hasPadding?: boolean;
 } & ImgHTMLAttributes<HTMLImageElement>;
 
-export default function Image({
+export default function CustomImage({
   src = fallbackImage,
   alt = 'generic image',
   width = '300px',
   height = '400px',
   hasShadow = false,
   hasBorder = true,
+  hasPadding = false,
   className = '',
   ...props
 }: ImageProps) {
   const defaultStyle = `object-cover object-center will-change-transform ${hasBorder ? 'border-black border-4' : ''}`;
   const shadowStyle = hasShadow ? 'shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]' : '';
+  const paddingStyle = hasPadding ? 'p-[1px]' : '';
 
   return (
     <img
       src={src || fallbackImage}
       alt={alt}
       style={{ width, height, imageRendering: 'smooth' }}
-      className={`${defaultStyle} ${shadowStyle} ${className}`.trim()}
+      className={`${defaultStyle} ${shadowStyle} ${paddingStyle} ${className}`.trim()}
       {...props}
     />
   );
