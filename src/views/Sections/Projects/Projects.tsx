@@ -8,15 +8,15 @@ export default function Projects() {
 
   const projectsSectionStyle =
     'w-full h-fit flex flex-col bg-white border-b-4 border-black pt-25 pb-25 px-15 gap-25 dot-bg';
-  const projectsTitleStyle = 'text-8xl font-bold font-display';
+  const projectsTitleStyle = 'text-8xl text-black font-bold font-display';
   const imageGrayFilterAnimation = 'grayscale hover:grayscale-0 transition-all duration-300';
   const projectsContainerStyle = 'flex flex-row justify-center h-[70vh] gap-45';
   const projectCardStyle = 'flex flex-col gap-3';
-  const projectTitleStyle = 'text-5xl font-bold text-black font-display';
+  const projectTitleStyle = 'text-5xl text-black font-bold font-display';
   const projectDescriptionStyle = 'text-xl font-sans text-gray max-w-[475px] text-justify';
   const projectTechStyle = 'flex flex-row gap-2 w-fit';
   const projectTechItemStyle =
-    'uppercase font-extrabold bg-white-secondary text-sm font-sans text-black border-3 w-fit px-2 py-1';
+    'uppercase font-extrabold bg-white-secondary text-sm text-black font-sans border-3 w-fit px-2 py-1';
 
   const projects = [
     {

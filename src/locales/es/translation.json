@@ -3,6 +3,7 @@
   "NAVBAR": {
     "ABOUT": "Sobre mí",
     "TECH": "Tech",
+    "HISTORY": "Historia",
     "PROJECTS": "Proyectos",
     "CONTACT": "Contacto",
     "INFO_TITLE": "P0RTFOLIO_V5",
@@ -45,5 +46,21 @@
     "DASHBOARD_DESCRIPTION": "Dashboard de información de trading construido con stack MERN para gestionar y visualizar datos de trading. Incluye actualización de datos, gráficos interactivos y autenticación de usuarios. Construido con React, TypeScript, Tailwind, Node.js y Express.js.",
     "PAIN_TRACKER_TITLE": "Pain Tracker",
     "PAIN_TRACKER_DESCRIPTION": "Aplicación de seguimiento de dolor construida con React, hl7 fhir, NestJS, y PostgreSQL. Incluye seguimiento de niveles de dolor, gestión de medicamentos y historial de pacientes. Construido con React, hl7 fhir, NestJS y PostgreSQL."
+  },
+  "CALL_TO_ACTION_SECTION": {
+    "START_A_BUILD": "EJECUTEMOS_UNA_BUILD?",
+    "TEXT": {
+      "LINE_1": "¡Construyamos algo increíble juntos!",
+      "LINE_2": "Contactarnos significa beneficiarse de la oportunidad de colaborar.",
+      "LINE_3": "¡Hagámoslo!"
+    },
+    "BUTTONS": {
+      "GET_IN_TOUCH": "CONTACTAR",
+      "DOWNLOAD_CV": "DESCARGAR_CV"
+    }
+  },
+  "FOOTER": {
+    "COPYRIGHT": "©2026 Igor Dzichkovskii",
+    "BUILD_WITH": "Construido con stack MERN con ❤️"
   }
 }
