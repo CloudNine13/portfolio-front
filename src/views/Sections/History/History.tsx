@@ -50,7 +50,7 @@ export default function History() {
 
   const historyContainerStyle =
     'h-fit bg-white py-15 px-15 flex flex-row justify-start-safe items-start border-b-4 border-black';
-  const titleContainerStyle = 'relative h-[63vh] px-35';
+  const titleContainerStyle = 'relative h-[118vh] px-35';
   const stickyContainerStyle =
     'sticky top-30 h-[15vh] flex flex-col items-center justify-center overflow-hidden';
   const titleStyle =

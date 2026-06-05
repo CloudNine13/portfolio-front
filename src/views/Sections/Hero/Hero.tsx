@@ -29,7 +29,7 @@ export default function Hero() {
           <Button
             backgroundColor="bg-white"
             borderSize={4}
-            textColor="text-black font-bold"
+            textColor="black font-bold"
             hasShadow
             disabled
             uppercase
