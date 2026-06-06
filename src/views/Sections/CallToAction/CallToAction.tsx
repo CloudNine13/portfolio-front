@@ -5,15 +5,14 @@ export default function CTA() {
   const { t } = useTranslation('translation', { keyPrefix: 'CALL_TO_ACTION_SECTION' });
 
   const callToActionContainerStyle =
-    'h-screen flex flex-col gap-20 items-center bg-black text-white py-30';
-  const callToActionTitleStyle = 'text-9xl font-bold font-display tracking-tight';
+    'md:h-[82vh] h-fit flex flex-col gap-20 items-center bg-black text-white md:py-30 py-15';
+  const callToActionTitleStyle = 'md:text-9xl text-4xl font-bold font-display tracking-tight';
   const callToActionTextStyle =
-    'flex flex-col gap-5 text-2xl font-sans text-gray-400 tracking-tight text-center';
-  const buttonContainerStyle = 'flex gap-15';
-  const heroCalculatedHeight = { height: 'calc(100vh - 165px)' };
+    'flex flex-col md:gap-5 gap-1 md:text-2xl text-lg font-sans text-gray-400 tracking-tight text-center max-w-[90vw]';
+  const buttonContainerStyle = 'flex md:flex-row flex-col md:gap-15 gap-10';
 
   return (
-    <div className={callToActionContainerStyle} style={heroCalculatedHeight}>
+    <div className={callToActionContainerStyle}>
       <h1 className={callToActionTitleStyle}>{t('START_A_BUILD')}</h1>
       <div className={callToActionTextStyle}>
         <p>{t('TEXT.LINE_1')}</p>
@@ -27,7 +26,7 @@ export default function CTA() {
           backgroundColor="bg-yellow"
           borderColor="border-yellow"
           textSize="text-2xl"
-          className="md:px-10 md:py-5 px-5 py-2"
+          className="md:px-10 md:py-5 px-25 py-4"
         >
           {t('BUTTONS.GET_IN_TOUCH')}
         </Button>
@@ -36,7 +35,7 @@ export default function CTA() {
           textColor="text-white-secondary font-bold"
           borderColor="border-white-secondary"
           textSize="text-2xl"
-          className="md:px-10 md:py-5 px-5 py-2"
+          className="md:px-10 md:py-5 px-25 py-4"
         >
           {t('BUTTONS.DOWNLOAD_CV')}
         </Button>
