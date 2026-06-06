@@ -42,7 +42,7 @@ export default function History() {
       role: 'Full Stack (React + Flask) Developer',
       company: 'Ukpik Productions',
       description: t('DESCRIPTIONS.DESCRIPTION_3'),
-      pinColor: 'green',
+      pinColor: 'yellow',
     },
     {
       id: 4,
@@ -50,7 +50,7 @@ export default function History() {
       role: 'Junior Developer & QA Technician',
       company: 'Camillion',
       description: t('DESCRIPTIONS.DESCRIPTION_4'),
-      pinColor: 'yellow',
+      pinColor: 'green',
     },
   ];
 

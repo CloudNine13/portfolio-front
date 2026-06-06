@@ -1,5 +1,5 @@
 const historyContainerStyle =
-  'h-fit bg-white md:py-20 py-10 md:px-25 px-5 flex flex-col md:flex-row justify-start-safe items-stretch border-b-4 border-black';
+  'h-fit bg-white pb-20 py-10 md:pb-25 md:py-20 md:px-25 px-5 flex flex-col md:flex-row justify-start-safe items-stretch border-b-4 border-black';
 const titleContainerStyle = 'relative md:px-35';
 const stickyContainerStyle =
   'sticky top-1/4 h-[12vh] flex flex-col items-center justify-center overflow-hidden';

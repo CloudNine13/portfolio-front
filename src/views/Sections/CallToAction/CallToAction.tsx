@@ -26,8 +26,8 @@ export default function CTA() {
           textColor="text-black font-bold"
           backgroundColor="bg-yellow"
           borderColor="border-yellow"
-          textSize="2xl"
-          className="px-10 py-5"
+          textSize="text-2xl"
+          className="md:px-10 md:py-5 px-5 py-2"
         >
           {t('BUTTONS.GET_IN_TOUCH')}
         </Button>
@@ -35,8 +35,8 @@ export default function CTA() {
           uppercase
           textColor="text-white-secondary font-bold"
           borderColor="border-white-secondary"
-          textSize="2xl"
-          className="px-10 py-5"
+          textSize="text-2xl"
+          className="md:px-10 md:py-5 px-5 py-2"
         >
           {t('BUTTONS.DOWNLOAD_CV')}
         </Button>
