@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button, CustomImage } from '../../components';
-import Dropdown from '../../components/Dropdown/Dropdown';
+import { Button, CustomImage, Dropdown } from '../../components';
 import coloredTerminalIcon from '../../assets/terminal-colored.svg';
 import {
   containerStyle,
@@ -83,7 +82,12 @@ export default function NavBar({ activeSection, onNavigate }: NavbarProps) {
             i18n.changeLanguage(element);
           }}
         />
-        <Button {...buttonStyle} hasShadow className="md:px-4 md:py-2">
+        <Button
+          {...buttonStyle}
+          textSize="md:text-lg text-md"
+          hasShadow
+          className="md:py-[6px] md:px-3"
+        >
           {t('BUTTON')}
         </Button>
       </div>

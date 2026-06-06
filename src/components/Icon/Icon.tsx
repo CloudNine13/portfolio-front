@@ -6,16 +6,10 @@ type IconProps = {
   children: ReactNode;
 } & HTMLAttributes<HTMLSpanElement>;
 
-export default function Icon({
-  className,
-  children,
-  hasBorder = false,
-  size = '2.5rem',
-}: IconProps) {
+export default function Icon({ className, children, hasBorder = false }: IconProps) {
   return (
     <span
-      className={`${hasBorder ? 'border-black border-4' : ''} ${className} material-symbols-outlined`}
-      style={{ fontSize: size }}
+      className={`${hasBorder ? 'border-black border-4' : ''} material-symbols-outlined ${className}`}
     >
       {children}
     </span>

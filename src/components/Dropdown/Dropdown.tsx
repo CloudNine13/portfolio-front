@@ -4,7 +4,6 @@ export type SelectOption = {
   value: string;
   shorthand: string;
   label: string;
-  description?: string;
 };
 
 type DropdownProps = {
@@ -39,13 +38,12 @@ export default function Dropdown({ options, value, onChange }: DropdownProps) {
   const shadowStyle = 'shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]';
   const dropdownStyle = `${shadowStyle} w-fit flex items-center justify-between ${isOpen ? 'bg-black' : 'bg-white'} border-4 border-black md:px-4 px-1 md:py-2 font-bold ${isOpen ? 'text-white' : 'text-black'} focus:outline-none transition duration-300 ease-in-out`;
   const arrowStyle = `transition-transform duration-200 ${isOpen ? 'rotate-90' : ''}`;
-  const optionListStyle = `${shadowStyle} absolute z-50 w-fit mt-2 bg-white border-4 border-black max-h-60 overflow-y-auto`;
+  const optionListStyle = `${shadowStyle} absolute z-50 w-25 md:w-fit mt-2 bg-white border-4 border-black max-h-60 overflow-y-auto`;
   const listItemStyle =
-    'cursor-pointer px-4 py-3 border-b-2 border-black last:border-b-0 hover:bg-black hover:text-white transition-colors';
-  const descriptionStyle = 'text-sm text-gray-600 font-normal';
+    'cursor-pointer md:px-4 md:py-3 px-2 py-2 border-b-2 border-black last:border-b-0 hover:bg-black hover:text-white transition-colors';
 
   return (
-    <div className="relative md:w-35 w-25" ref={dropdownRef}>
+    <div className="relative md:w-35 w-22" ref={dropdownRef}>
       <button type="button" onClick={() => setIsOpen(!isOpen)} className={dropdownStyle}>
         <span className="font-display text-xs md:text-base md:pr-3 pr-2">{displayValue}</span>
         <span className={arrowStyle}>▼</span>
@@ -59,10 +57,7 @@ export default function Dropdown({ options, value, onChange }: DropdownProps) {
               className={listItemStyle}
             >
               <div className="flex flex-col">
-                <span className="font-bold">{option.label}</span>
-                {option.description && (
-                  <span className={descriptionStyle}>{option.description}</span>
-                )}
+                <span className="font-bold md:text-base text-sm">{option.label}</span>
               </div>
             </li>
           ))}
