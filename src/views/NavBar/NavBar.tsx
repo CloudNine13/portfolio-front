@@ -3,6 +3,13 @@ import { useTranslation } from 'react-i18next';
 import { Button, CustomImage } from '../../components';
 import Dropdown from '../../components/Dropdown/Dropdown';
 import coloredTerminalIcon from '../../assets/terminal-colored.svg';
+import {
+  containerStyle,
+  headerStyle,
+  infoStyle,
+  selectionStyle,
+  buttonStyle,
+} from './NavBar.style';
 
 export type SectionId = 'home' | 'tech' | 'history' | 'projects' | 'contact';
 
@@ -34,16 +41,6 @@ export default function NavBar({ activeSection, onNavigate }: NavbarProps) {
     languageOptions.find((option) => option.value === language)?.shorthand.toUpperCase() ||
     fallbackLanguage;
 
-  const infoStyle = 'font-display text-3xl font-bold';
-  const headerStyle = 'flex items-center gap-4';
-  const containerStyle =
-    'fixed top-0 left-0 right-0 flex h-fit justify-between p-4 z-50 border-b-4 bg-white items-center';
-  const selectionStyle = 'flex flex-row gap-6 text-xl font-display font-semibold';
-  const buttonStyle = {
-    textColor: 'white-secondary',
-    backgroundColor: 'bg-black',
-  };
-
   const getMenuItemStyle = (isActive: boolean) =>
     `cursor-pointer text-center uppercase transition-all duration-200 ${
       isActive
@@ -57,8 +54,8 @@ export default function NavBar({ activeSection, onNavigate }: NavbarProps) {
         <CustomImage
           src={coloredTerminalIcon}
           alt="Terminal Icon"
-          width="60px"
-          height="60px"
+          width="w-[40px] md:w-[60px]"
+          height="h-[40px] md:h-[60px]"
           hasBorder={false}
         />
         <div className={infoStyle}>{t('INFO_TITLE')}</div>
@@ -66,7 +63,6 @@ export default function NavBar({ activeSection, onNavigate }: NavbarProps) {
       <div className={selectionStyle}>
         {menuItems.map((item) => {
           const isActive = item.id === activeSection;
-
           return (
             <div
               key={item.key}
@@ -87,7 +83,7 @@ export default function NavBar({ activeSection, onNavigate }: NavbarProps) {
             i18n.changeLanguage(element);
           }}
         />
-        <Button {...buttonStyle} hasShadow>
+        <Button {...buttonStyle} hasShadow className="md:px-4 md:py-2">
           {t('BUTTON')}
         </Button>
       </div>

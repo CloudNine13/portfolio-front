@@ -5,7 +5,7 @@ type ButtonProps = {
   textColor?: string;
   backgroundColor?: string;
   hasShadow?: boolean;
-  borderSize?: number;
+  borderSize?: string;
   borderColor?: string;
   uppercase?: boolean;
   textSize?: string;
@@ -16,7 +16,7 @@ export default function Button({
   children,
   textColor = '',
   backgroundColor = '',
-  borderSize = 4,
+  borderSize = 'border-4',
   borderColor = 'border-black',
   disabled = false,
   hasShadow = false,
@@ -25,27 +25,27 @@ export default function Button({
   className = '',
   ...props
 }: ButtonProps) {
-  const defaultStyle = 'py-1 px-2 h-fit font-display';
+  const defaultStyle = 'md:py-1 md:px-2 px-1 h-fit font-display';
   const shadowStyle = hasShadow ? 'shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]' : '';
   const disabledStyle = disabled ? 'cursor-default' : 'cursor-pointer';
-  const borderStyle = `border-${borderSize} ${borderColor}`;
+  const borderStyle = `${borderSize} ${borderColor}`;
   const pseudoActive = disabled
     ? ''
-    : 'active:translate-x-[4px] active:translate-y-[4px] active:shadow-none';
+    : 'active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all duration-35';
 
   return (
     <button
       className={`
         ${defaultStyle} 
+        ${className}
         ${shadowStyle}
         ${disabledStyle}
         ${borderStyle}
         ${pseudoActive}
-        ${textColor ? `text-${textColor}` : ''}
-        ${textSize ? `text-${textSize}` : ''}
+        ${textColor ? `${textColor}` : ''}
+        ${textSize ? `${textSize}` : ''}
         ${backgroundColor}
         ${uppercase ? 'uppercase' : ''}
-        ${className}
       `}
       disabled={disabled}
       {...props}

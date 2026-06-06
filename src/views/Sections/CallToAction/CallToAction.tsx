@@ -23,7 +23,7 @@ export default function CTA() {
       <div className={buttonContainerStyle}>
         <Button
           uppercase
-          textColor="black font-bold"
+          textColor="text-black font-bold"
           backgroundColor="bg-yellow"
           borderColor="border-yellow"
           textSize="2xl"
@@ -33,7 +33,7 @@ export default function CTA() {
         </Button>
         <Button
           uppercase
-          textColor="white-secondary font-bold"
+          textColor="text-white-secondary font-bold"
           borderColor="border-white-secondary"
           textSize="2xl"
           className="px-10 py-5"
