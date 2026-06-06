@@ -1,5 +1,11 @@
 import { useTranslation } from 'react-i18next';
-import TimelineItem from './TimelineItem';
+import { TimelineItem } from './TimelineItem';
+import {
+  historyContainerStyle,
+  stickyContainerStyle,
+  titleContainerStyle,
+  titleStyle,
+} from './History.style';
 
 export type TimelineItemProps = {
   id: number;
@@ -48,14 +54,6 @@ export default function History() {
     },
   ];
 
-  const historyContainerStyle =
-    'h-fit bg-white py-15 px-15 flex flex-row justify-start-safe items-start border-b-4 border-black';
-  const titleContainerStyle = 'relative h-[118vh] px-35';
-  const stickyContainerStyle =
-    'sticky top-30 h-[15vh] flex flex-col items-center justify-center overflow-hidden';
-  const titleStyle =
-    'text-8xl font-bold font-display text-white bg-white text-white bg-white [-webkit-text-stroke:1.5px_#000] uppercase whitespace-nowrap will-change-transform [animation-timeline:scroll()] [animation-range:entry_0%_exit_100%] animate-scroll-vertical';
-
   return (
     <div className={historyContainerStyle}>
       <div className={titleContainerStyle}>
@@ -63,7 +61,7 @@ export default function History() {
           <h1 className={titleStyle}>{t('SECTION_TITLE')}</h1>
         </div>
       </div>
-      <div className="flex flex-col gap-15">
+      <div className="flex flex-col gap-15 pt-7">
         {listItems.map((item) => (
           <TimelineItem key={item.id} {...item} />
         ))}
