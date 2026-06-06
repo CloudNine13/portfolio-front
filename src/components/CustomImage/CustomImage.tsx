@@ -14,8 +14,8 @@ type ImageProps = {
 export default function CustomImage({
   src = fallbackImage,
   alt = 'generic image',
-  width = '300px',
-  height = '400px',
+  width = 'w-[300px]',
+  height = 'h-[400px]',
   hasShadow = false,
   hasBorder = true,
   hasPadding = false,
@@ -30,8 +30,8 @@ export default function CustomImage({
     <img
       src={src || fallbackImage}
       alt={alt}
-      style={{ width, height, imageRendering: 'smooth' }}
-      className={`${defaultStyle} ${shadowStyle} ${paddingStyle} ${className}`.trim()}
+      style={{ imageRendering: 'smooth' }}
+      className={`${defaultStyle} ${className} ${shadowStyle} ${paddingStyle} ${width} ${height}`.trim()}
       {...props}
     />
   );
