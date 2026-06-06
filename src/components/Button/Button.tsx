@@ -21,7 +21,7 @@ export default function Button({
   disabled = false,
   hasShadow = false,
   uppercase = false,
-  textSize = 'lg',
+  textSize = 'text-lg',
   className = '',
   ...props
 }: ButtonProps) {

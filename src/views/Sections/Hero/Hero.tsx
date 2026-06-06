@@ -41,9 +41,9 @@ export default function Hero() {
       </div>
       <div className={imageContainerStyle}>
         <div className="relative inline-block w-[300px] h-[400px]">
-          <Icon className={overlayIconStyle} size={'2em'} hasBorder>
-            terminal
-          </Icon>
+          <div className={overlayIconStyle}>
+            <Icon className="!text-[2rem]">terminal</Icon>
+          </div>
           <CustomImage src={IgorImage} alt="Hero" hasShadow />
         </div>
         <p className={nameStyle}>{t('PERSONAL_INFO.FULL_NAME')}</p>
