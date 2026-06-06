@@ -6,7 +6,7 @@ import { useEffect, useState, useRef } from 'react';
 export type SectionId = 'home' | 'tech' | 'history' | 'projects' | 'contact';
 
 export default function MainView() {
-  const sectionsContainerStyle = 'h-screen overflow-y-auto scrollbar-hide';
+  const sectionsContainerStyle = 'h-[100dvh] overflow-y-auto scrollbar-hide';
   const [activeSection, setActiveSection] = useState<SectionId>('home');
 
   const containerRef = useRef<HTMLDivElement>(null);
