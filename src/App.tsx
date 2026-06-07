@@ -1,5 +1,12 @@
-import { MainView } from './views';
+import { ToastProvider } from '@context';
+import { Toast } from '@components';
+import { MainView } from '@views';
 
 export default function App() {
-  return <MainView />;
+  return (
+    <ToastProvider>
+      <MainView />
+      <Toast />
+    </ToastProvider>
+  );
 }

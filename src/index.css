@@ -35,3 +35,17 @@
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
+
+html,
+body {
+  padding-bottom: env(safe-area-inset-bottom);
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  html,
+  body {
+    overflow: hidden;
+  }
+}

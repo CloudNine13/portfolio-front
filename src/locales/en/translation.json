@@ -7,7 +7,7 @@
     "PROJECTS": "Projects",
     "CONTACT": "Contact",
     "INFO_TITLE": "PORTFOLI0_V5",
-    "BUTTON": "Contact!"
+    "BUTTON": "Contact"
   },
   "HERO_SECTION": {
     "DESCRIPTION": "Building high-performance web architectures through geometric precision and functional minimalism.",
@@ -62,5 +62,25 @@
   "FOOTER": {
     "COPYRIGHT": "©2026 Igor Dzichkovskii",
     "BUILD_WITH": "Build with MERN stack with ❤️"
+  },
+  "SUBMIT_FORM": {
+    "TITLE": "Initiate Contact",
+    "DESCRIPTION": "System is ready for incoming transmissions. Initiate contact to begin the journey. Expect a response within 24 hours.",
+    "NAME_LABEL": "Name",
+    "EMAIL_LABEL": "Email",
+    "SUBJECT_LABEL": "Subject",
+    "MESSAGE_LABEL": "Message",
+    "SUBMIT_BUTTON": "Send",
+    "ERRORS": {
+      "EMAIL_REQUIRED": "Email is required",
+      "EMAIL_INVALID": "Please enter a valid email",
+      "MESSAGE_REQUIRED": "Message is required"
+    }
+  },
+  "TOAST": {
+    "SUCCESS": "Success!",
+    "ERROR": "Error!",
+    "TRANSMISSION_SUCCESS": "TRANSMISSI0N_SUCCESSFUL: Your message has been logged.",
+    "TRANSMISSION_FAILED": "TRANSMISSI0N_FAILED: Failed to log your message. Please try again."
   }
 }

@@ -1,4 +1,6 @@
 export { Button } from './Button';
 export { CustomImage } from './CustomImage';
 export { Dropdown } from './Dropdown';
-export { Icon } from './Icon';
+export { CustomIcon as Icon } from './CusomIcon';
+export { SubmitForm } from './SubmitForm';
+export { Toast } from './Toast';

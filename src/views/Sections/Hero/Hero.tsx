@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
-import { Button, Icon, CustomImage } from '../../../components';
-import IgorImage from '../../../assets/igor.png';
+import { Button, Icon, CustomImage } from '@components';
+import IgorImage from '@assets/igor.png';
 import {
   heroContainerStyle,
   textContainerStyle,

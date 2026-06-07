@@ -1,17 +1,20 @@
+import { useEffect, useState, useRef } from 'react';
+import { SubmitForm } from '@components';
 import { NavBar } from '../NavBar';
 import { Hero, Tech, History, Projects, CTA } from '../Sections';
 import { Footer } from '../Footer';
-import { useEffect, useState, useRef } from 'react';
 
-export type SectionId = 'home' | 'tech' | 'history' | 'projects' | 'contact';
+type SectionId = 'home' | 'tech' | 'history' | 'projects' | 'contact';
 
 export default function MainView() {
-  const sectionsContainerStyle = 'h-[100dvh] overflow-y-auto scrollbar-hide';
+  const sectionsContainerStyle =
+    'md:h-[100dvh] md:overflow-y-auto h-auto overflow-visible scrollbar-hide';
   const [activeSection, setActiveSection] = useState<SectionId>('home');
+  const [isSubmitFormOpen, setIsSubmitFormOpen] = useState(false);
 
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const elementsRegistry = useRef<Record<SectionId, HTMLDivElement | null>>({
+  const elementsRef = useRef<Record<SectionId, HTMLDivElement | null>>({
     home: null,
     tech: null,
     history: null,
@@ -20,7 +23,7 @@ export default function MainView() {
   });
 
   const scrollToSection = (id: SectionId) => {
-    elementsRegistry.current[id]?.scrollIntoView({
+    elementsRef.current[id]?.scrollIntoView({
       behavior: 'smooth',
       block: 'start',
     });
@@ -28,7 +31,7 @@ export default function MainView() {
 
   useEffect(() => {
     const options = {
-      root: containerRef.current,
+      root: window.innerWidth >= 768 ? containerRef.current : null,
       rootMargin: '-30% 0px -50% 0px',
       threshold: 0,
     };
@@ -43,7 +46,7 @@ export default function MainView() {
 
     const observer = new IntersectionObserver(callback, options);
 
-    Object.values(elementsRegistry.current).forEach((element) => {
+    Object.values(elementsRef.current).forEach((element) => {
       if (element) observer.observe(element);
     });
 
@@ -52,12 +55,22 @@ export default function MainView() {
 
   return (
     <>
-      <NavBar activeSection={activeSection} onNavigate={scrollToSection} />
+      <NavBar
+        activeSection={activeSection}
+        onNavigate={scrollToSection}
+        onOpenSubmitForm={() => setIsSubmitFormOpen(true)}
+      />
+      <SubmitForm
+        isOpen={isSubmitFormOpen}
+        onClose={() => {
+          setIsSubmitFormOpen(false);
+        }}
+      />
       <main id="sections" ref={containerRef} className={sectionsContainerStyle}>
         <div
           id="home"
           ref={(el) => {
-            elementsRegistry.current.home = el;
+            elementsRef.current.home = el;
           }}
         >
           <Hero />
@@ -65,7 +78,7 @@ export default function MainView() {
         <div
           id="tech"
           ref={(el) => {
-            elementsRegistry.current.tech = el;
+            elementsRef.current.tech = el;
           }}
         >
           <Tech />
@@ -73,7 +86,7 @@ export default function MainView() {
         <div
           id="history"
           ref={(el) => {
-            elementsRegistry.current.history = el;
+            elementsRef.current.history = el;
           }}
         >
           <History />
@@ -81,7 +94,7 @@ export default function MainView() {
         <div
           id="projects"
           ref={(el) => {
-            elementsRegistry.current.projects = el;
+            elementsRef.current.projects = el;
           }}
         >
           <Projects />
@@ -89,10 +102,10 @@ export default function MainView() {
         <div
           id="contact"
           ref={(el) => {
-            elementsRegistry.current.contact = el;
+            elementsRef.current.contact = el;
           }}
         >
-          <CTA />
+          <CTA onOpenSubmitForm={() => setIsSubmitFormOpen(true)} />
           <Footer />
         </div>
       </main>
