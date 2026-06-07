@@ -31,7 +31,7 @@ export default function Button({
   const borderStyle = `${borderSize} ${borderColor}`;
   const pseudoActive = disabled
     ? ''
-    : 'active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all duration-35';
+    : 'active:translate-x-[4px] active:translate-y-[4px] active:shadow-none transition-all duration-75 ease-out';
 
   return (
     <button

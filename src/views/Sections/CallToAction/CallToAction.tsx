@@ -1,15 +1,18 @@
-import { Button } from '../../../components';
 import { useTranslation } from 'react-i18next';
+import { Button } from '@components';
+import {
+  callToActionContainerStyle,
+  callToActionTitleStyle,
+  callToActionTextStyle,
+  buttonContainerStyle,
+} from './CallToAction.style';
 
-export default function CTA() {
+type CTAProps = {
+  onOpenSubmitForm?: () => void;
+};
+
+export default function CTA({ onOpenSubmitForm }: CTAProps) {
   const { t } = useTranslation('translation', { keyPrefix: 'CALL_TO_ACTION_SECTION' });
-
-  const callToActionContainerStyle =
-    'md:h-[82vh] h-fit flex flex-col gap-20 items-center bg-black text-white md:py-30 py-15';
-  const callToActionTitleStyle = 'md:text-9xl text-4xl font-bold font-display tracking-tight';
-  const callToActionTextStyle =
-    'flex flex-col md:gap-5 gap-1 md:text-2xl text-lg font-sans text-gray-400 tracking-tight text-center max-w-[90vw]';
-  const buttonContainerStyle = 'flex md:flex-row flex-col md:gap-15 gap-10';
 
   return (
     <div className={callToActionContainerStyle}>
@@ -27,6 +30,7 @@ export default function CTA() {
           borderColor="border-yellow"
           textSize="text-2xl"
           className="md:px-10 md:py-5 px-25 py-4"
+          onClick={onOpenSubmitForm}
         >
           {t('BUTTONS.GET_IN_TOUCH')}
         </Button>
@@ -36,6 +40,9 @@ export default function CTA() {
           borderColor="border-white-secondary"
           textSize="text-2xl"
           className="md:px-10 md:py-5 px-25 py-4"
+          onClick={() => {
+            /* TODO: Add download CV functionality */
+          }}
         >
           {t('BUTTONS.DOWNLOAD_CV')}
         </Button>

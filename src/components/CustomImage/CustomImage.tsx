@@ -1,5 +1,5 @@
 import type { ImgHTMLAttributes } from 'react';
-import fallbackImage from '../../assets/fallback-image.png';
+import fallbackImage from '@assets/fallback-image.png';
 
 type ImageProps = {
   src: string;

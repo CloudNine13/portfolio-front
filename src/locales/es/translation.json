@@ -7,7 +7,7 @@
     "PROJECTS": "Proyectos",
     "CONTACT": "Contacto",
     "INFO_TITLE": "P0RTFOLIO_V5",
-    "BUTTON": "Conocerme!"
+    "BUTTON": "Conocerme"
   },
   "HERO_SECTION": {
     "DESCRIPTION": "Construyendo arquitecturas web de alto rendimiento a través de precisión geométrica y minimalismo funcional.",
@@ -61,6 +61,26 @@
   },
   "FOOTER": {
     "COPYRIGHT": "©2026 Igor Dzichkovskii",
-    "BUILD_WITH": "Construido con stack MERN con ❤️"
+    "BUILD_WITH": "Hecho con stack MERN con ❤️"
+  },
+  "SUBMIT_FORM": {
+    "TITLE": "Iniciar Contacto",
+    "DESCRIPTION": "El sistema está listo para recibir transmisiones entrantes. Inicia el contacto para comenzar el viaje. Espera una respuesta en 24 horas.",
+    "NAME_LABEL": "Nombre",
+    "EMAIL_LABEL": "Email",
+    "SUBJECT_LABEL": "Asunto",
+    "MESSAGE_LABEL": "Mensaje",
+    "SUBMIT_BUTTON": "Enviar",
+    "ERRORS": {
+      "EMAIL_REQUIRED": "El email es requerido",
+      "EMAIL_INVALID": "Por favor ingresa un email válido",
+      "MESSAGE_REQUIRED": "El mensaje es requerido"
+    }
+  },
+  "TOAST": {
+    "SUCCESS": "¡Éxito!",
+    "ERROR": "¡Error!",
+    "TRANSMISSION_SUCCESS": "TRANSMISI0N_EXITOSA: Tu mensaje ha sido registrado.",
+    "TRANSMISSION_FAILED": "TRANSMISI0N_FALLIDA: No se pudo registrar tu mensaje. Por favor, inténtalo de nuevo."
   }
 }

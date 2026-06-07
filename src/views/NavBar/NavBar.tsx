@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Button, CustomImage, Dropdown } from '../../components';
-import coloredTerminalIcon from '../../assets/terminal-colored.svg';
+import { Button, CustomImage, Dropdown } from '@components';
+import coloredTerminalIcon from '@assets/terminal-colored.svg';
 import {
   containerStyle,
   headerStyle,
@@ -15,6 +15,7 @@ export type SectionId = 'home' | 'tech' | 'history' | 'projects' | 'contact';
 type NavbarProps = {
   activeSection: SectionId;
   onNavigate: (section: SectionId) => void;
+  onOpenSubmitForm?: () => void;
 };
 
 const menuItems = [
@@ -31,7 +32,7 @@ const languageOptions = [
   { value: 'en', shorthand: '🇺🇸 Eng', label: '🇺🇸 English' },
 ];
 
-export default function NavBar({ activeSection, onNavigate }: NavbarProps) {
+export default function NavBar({ activeSection, onNavigate, onOpenSubmitForm }: NavbarProps) {
   const { t, i18n } = useTranslation('translation', { keyPrefix: 'NAVBAR' });
   const fallbackLanguage = i18n.language || 'en';
   const [language, setLanguage] = useState(fallbackLanguage);
@@ -84,9 +85,10 @@ export default function NavBar({ activeSection, onNavigate }: NavbarProps) {
         />
         <Button
           {...buttonStyle}
-          textSize="md:text-lg text-md"
+          textSize="md:text-lg text-md uppercase"
           hasShadow
           className="md:py-[6px] md:px-3"
+          onClick={onOpenSubmitForm}
         >
           {t('BUTTON')}
         </Button>
