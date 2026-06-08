@@ -27,7 +27,7 @@ export default function Button({
 }: ButtonProps) {
   const defaultStyle = 'md:py-1 md:px-2 px-1 h-fit font-display';
   const shadowStyle = hasShadow ? 'shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]' : '';
-  const disabledStyle = disabled ? 'cursor-default' : 'cursor-pointer';
+  const disabledStyle = disabled ? 'cursor-not-allowed' : 'cursor-pointer';
   const borderStyle = `${borderSize} ${borderColor}`;
   const pseudoActive = disabled
     ? ''

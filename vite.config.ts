@@ -14,6 +14,16 @@ export default defineConfig({
       '@assets': path.resolve(__dirname, './src/assets'),
       '@views': path.resolve(__dirname, './src/views'),
       '@types': path.resolve(__dirname, './src/types'),
+      '@api': path.resolve(__dirname, './src/api'),
+    },
+  },
+  server: {
+    cors: true,
+    proxy: {
+      '/api': {
+        target: 'http://localhost:3000',
+        changeOrigin: true,
+      },
     },
   },
 });
