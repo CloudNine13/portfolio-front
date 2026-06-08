@@ -38,7 +38,7 @@ export default function Dropdown({ options, value, onChange }: DropdownProps) {
   const shadowStyle = 'shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]';
   const dropdownStyle = `${shadowStyle} w-fit flex items-center justify-between ${isOpen ? 'bg-black' : 'bg-white'} border-4 border-black md:px-4 px-1 md:py-2 font-bold ${isOpen ? 'text-white' : 'text-black'} focus:outline-none transition duration-300 ease-in-out`;
   const arrowStyle = `transition-transform duration-200 ${isOpen ? 'rotate-90' : ''}`;
-  const optionListStyle = `${shadowStyle} absolute z-50 w-28 md:w-fit mt-2 bg-white border-4 border-black max-h-60 overflow-y-auto`;
+  const optionListStyle = `${shadowStyle} absolute z-50 w-30 md:w-fit mt-2 bg-white border-4 border-black max-h-60 overflow-y-auto text-center`;
   const listItemStyle =
     'cursor-pointer md:px-4 md:py-3 px-2 py-2 border-b-2 border-black last:border-b-0 hover:bg-black hover:text-white transition-colors';
 

@@ -3,7 +3,7 @@ name: Frontend Production CD Pipeline
 on:
   push:
     branches:
-      - master
+      - fix/design-changes
 
 jobs:
   deploy:

@@ -24,7 +24,7 @@ export default function Projects() {
       description: t('DASHBOARD_DESCRIPTION'),
       tech: ['MERN', 'JS/TS', 'REST', 'MongoDB'],
       image: DashboardImage,
-      align: 'self-start',
+      align: 'md:self-start self-center',
     },
     {
       id: 2,
@@ -32,7 +32,7 @@ export default function Projects() {
       description: t('PAIN_TRACKER_DESCRIPTION'),
       tech: ['MERN', 'hl7 fhir', 'NestJS', 'PostgreSQL'],
       image: PainTrackerImage,
-      align: 'self-end',
+      align: 'md:self-end self-center',
     },
   ];
 
@@ -46,8 +46,8 @@ export default function Projects() {
               <CustomImage
                 src={project.image}
                 alt={project.title}
-                width="475px"
-                height="275px"
+                width="md:w-[475px] w-[340px]"
+                height="md:h-[250px] h-[200px]"
                 hasPadding
                 hasShadow
                 className={imageGrayFilterAnimation}

@@ -47,7 +47,7 @@ export default function CTA({ onOpenSubmitForm }: CTAProps) {
           backgroundColor="bg-yellow"
           borderColor="border-yellow"
           textSize="text-2xl"
-          className="md:px-10 md:py-5 px-25 py-4"
+          className="w-full md:w-auto md:px-10 md:py-5 py-4"
           onClick={onOpenSubmitForm}
         >
           {t('BUTTONS.GET_IN_TOUCH')}
@@ -57,7 +57,7 @@ export default function CTA({ onOpenSubmitForm }: CTAProps) {
           textColor="text-white-secondary font-bold"
           borderColor="border-white-secondary"
           textSize="text-2xl"
-          className="md:px-10 md:py-5 px-25 py-4"
+          className="w-full md:w-auto md:px-10 md:py-5 py-4"
           onClick={handlePDFDownload}
         >
           {t('BUTTONS.DOWNLOAD_CV')}

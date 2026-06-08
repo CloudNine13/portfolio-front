@@ -1,7 +1,7 @@
 const techSectionStyle =
-  'h-fit flex flex-col bg-yellow border-b-4 border-black md:pt-25 pt-17 md:pb-45 pb-25 md:px-15 px-9 md:gap-20 gap-14';
-const sectionTitleStyle = 'text-4xl md:text-8xl font-bold font-display tracking-tight';
-const gridContainerStyle = 'flex flex-wrap justify-center';
+  'h-fit flex flex-col bg-yellow border-b-4 border-black md:pt-25 pt-17 md:pb-45 pb-25 md:px-20 md:gap-20 gap-14';
+const sectionTitleStyle = 'text-4xl md:text-8xl font-bold font-display tracking-tight md:text-left text-center';
+const gridContainerStyle = 'flex flex-wrap justify-center px-8';
 const gridStyle = 'grid grid-cols-1 md:grid-cols-4 h-fit w-full bg-white';
 const gridItemStyle =
   'border-4 border-b-0 last:border-b-4 md:border-r-0 md:border-b-4 md:last:border-r-4 border-black p-8';
