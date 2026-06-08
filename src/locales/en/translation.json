@@ -1,7 +1,89 @@
 {
-  "PERSONAL_INFO": {
-    "NAME": "Igor",
-    "SURNAME": "Dzichkovskii",
-    "FULL_NAME": "Igor Dzichkovskii"
+  "WIP": "Work in progress...",
+  "NAVBAR": {
+    "ABOUT": "About",
+    "TECH": "Tech",
+    "HISTORY": "History",
+    "PROJECTS": "Projects",
+    "CONTACT": "Contact",
+    "INFO_TITLE": "PORTFOLI0_V5",
+    "BUTTON": "Contact"
+  },
+  "HERO_SECTION": {
+    "DESCRIPTION": "Building high-performance web architectures through geometric precision and functional minimalism.",
+    "EXPERIENCE": ">5+ years of experience",
+    "PERSONAL_INFO": {
+      "NAME": "Igor",
+      "SURNAME": "Dzichkovskii",
+      "FULL_NAME": "Igor Dzichkovskii"
+    }
+  },
+  "TECH_SECTION": {
+    "SECTION_TITLE": "C0RE_STACK",
+    "MONGODB": "Implementing NoSQL (SQL included) Architecture & Schema design",
+    "EXPRESS": "Creating Middleware & RESTful Systems",
+    "REACT": "Declarative UI & State Flow Management",
+    "NODE_JS": "Asynchronous Runtime & Scalability"
+  },
+  "HISTORY_SECTION": {
+    "SECTION_TITLE": "HISTORY_",
+    "DATES": {
+      "DATE_1": "oct. 2025 — Present",
+      "DATE_2": "jul. 2022 — oct. 2025",
+      "DATE_3": "aug. 2021 — jul. 2022",
+      "DATE_4": "may 2019 — jul. 2021"
+    },
+    "DESCRIPTIONS": {
+      "DESCRIPTION_1": "Engineered high-performance web applications using the MERN stack and Node.js within a distributed team. Focused on building scalable backend architectures, implementing secure transactional workflows, and optimizing platform performance.",
+      "DESCRIPTION_2": "Developed the frontend architecture for three specialized stock trading applications using React and TypeScript. Managed dense data presentation layers with AG Grid, styled components via Styled Components, and established low-latency backend communication using gRPC. Created reusable components and hooks, authored comprehensive unit and integration tests, and executed extensive refactoring of legacy codebases. Created local containerized testing configurations via Docker using custom JSON data mocks exceeding 5k–7k lines. Managed CI/CD workflows using Jenkins, BlueOcean, CloudBees, Bitbucket, and JIRA.",
+      "DESCRIPTION_3": "Operated as an independent contractor delivering end-to-end full-stack web applications utilizing the MERN stack. Spearheaded the architecture of an Interactive Map for real-time filming location tracking with advanced filtering, alongside a high-availability media storage system. Designed RESTful architectures with Node.js and Express, built reactive interfaces via React Hooks and Context API, optimized MongoDB query performance using precise indexes and aggregations, and automated deployment pipelines using Docker and Unix Shell scripts.",
+      "DESCRIPTION_4": "Owned manual and automated QA testing infrastructures, data analysis, database administration, and peer code reviews. Wrote automation scripts and backend logic across multiple environments using Python, JavaScript (Node.js), and Ruby on Rails. Authored over 40 automated tests for iOS platforms using Swift. Engineered standalone Android applications with Kotlin and Java to integrate complex third-party APIs (Google Maps, Firebase). Managed relational and non-relational database layers including MongoDB, SQLite, and PostgreSQL using Docker and Unix Shell environments."
+    }
+  },
+  "PROJECTS_SECTION": {
+    "SECTION_TITLE": "FEATURED_PROJECTS",
+    "DASHBOARD_TITLE": "Dashboard",
+    "DASHBOARD_DESCRIPTION": "Trading info dashboard build with MERN stack for managing and visualizing trading data. Features include data updates, interactive charts, and user authentication. Built with React, TypeScript, Tailwind, Node.js, and Express.js.",
+    "PAIN_TRACKER_TITLE": "Pain Tracker",
+    "PAIN_TRACKER_DESCRIPTION": "Pain tracking application built with React, hl7 fhir, NestJS, and PostgreSQL. Features include pain level tracking, medication management, and patient history"
+  },
+  "CALL_TO_ACTION_SECTION": {
+    "START_A_BUILD": "START_A_BUILD?",
+    "TEXT": {
+      "LINE_1": "Let's build something amazing together!",
+      "LINE_2": "Get in touch means benefit from the opportunity to collaborate.",
+      "LINE_3": "Let's make it happen!"
+    },
+    "BUTTONS": {
+      "GET_IN_TOUCH": "GET_IN_TOUCH",
+      "DOWNLOAD_CV": "DOWNLOAD_CV"
+    },
+    "PDF_SUCCESS": "CV downloaded successfully",
+    "PDF_ERROR": "Failed to download CV"
+  },
+  "FOOTER": {
+    "COPYRIGHT": "©2026 Igor Dzichkovskii",
+    "BUILD_WITH": "Build with MERN stack with ❤️"
+  },
+  "SUBMIT_FORM": {
+    "TITLE": "Initiate Contact",
+    "DESCRIPTION": "System is ready for incoming transmissions. Initiate contact to begin the journey. Expect a response within 24 hours.",
+    "NAME_LABEL": "Name",
+    "EMAIL_LABEL": "Email",
+    "SUBJECT_LABEL": "Subject",
+    "MESSAGE_LABEL": "Message",
+    "SUBMIT_BUTTON": "Send",
+    "SUBMITTING": "Sending...",
+    "ERRORS": {
+      "EMAIL_REQUIRED": "Email is required",
+      "EMAIL_INVALID": "Please enter a valid email",
+      "MESSAGE_REQUIRED": "Message is required"
+    }
+  },
+  "TOAST": {
+    "SUCCESS": "Success!",
+    "ERROR": "Error!",
+    "TRANSMISSION_SUCCESS": "TRANSMISSI0N_SUCCESSFUL: Your message has been logged.",
+    "TRANSMISSION_FAILED": "TRANSMISSI0N_FAILED: Failed to log your message. Please try again."
   }
 }

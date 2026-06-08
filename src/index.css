@@ -1,1 +1,51 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+@import 'material-symbols/outlined.css';
+
+@theme {
+  --color-black: #1a1a1a;
+  --color-yellow: #ffcc00;
+  --color-red: #e63b2e;
+  --color-blue: #0055ff;
+  --color-green: #18531e;
+  --color-white: #f5f0e8;
+  --color-dot-white: #e6e1d9;
+  --color-white-secondary: #ffffff;
+  --color-gray: #4a4a4a;
+}
+
+.dot-bg {
+  background-image: radial-gradient(var(--color-dot-white) 8%, transparent 10%);
+  background-size: 28px 28px;
+  background-color: var(--color-white);
+}
+
+.font-display {
+  font-family: 'Ubuntu Mono', sans-serif;
+}
+
+.font-sans {
+  font-family: 'Inter', sans-serif;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+html,
+body {
+  padding-bottom: env(safe-area-inset-bottom);
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 768px) {
+  html,
+  body {
+    overflow: hidden;
+  }
+}
