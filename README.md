@@ -1,73 +1,78 @@
-# React + TypeScript + Vite
+# Igor Dzichkovskii | Senior MERN Stack Developer - Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A high-performance, minimalist portfolio application showcasing enterprise-grade frontend architecture. This project serves as a production-ready demonstration of a developer-centric UI, localized design patterns, and clean engineering principles.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠️ Architecture & Core Tech Stack
 
-## React Compiler
+- **Runtime & Core:** React 19.2 (Concurrent features, modern hooks) paired with TypeScript 6.0 (Strict mode typing).
+- **Build Pipeline:** Vite 8.0 configured with explicit path aliasing for decoupled modular imports.
+- **Styling Engine:** TailwindCSS v4.0 leveraging a strict geometric, design-token driven system.
+- **Internationalization:** `i18next` lifecycle management with client-side localization persistence (`en`, `es`, `ru`).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🏗️ Technical Highlights & Design Patterns
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### 1. Architectural Layout
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+The codebase adheres to a modular, domain-driven structure optimizing separation of concerns:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **Custom Context Engines:** Global UI state (such as the notification pipeline) is managed natively via React Context API to eliminate third-party state overhead.
+- **Optimized Rendering Layer:** Performance-critical scroll states and active viewport tracking are implemented using custom hooks leveraging the native **Intersection Observer API**.
+- **Decoupled Modules:** Clean separation between presentation elements (`@components`), business logic (`@hooks`), layouts (`@views`), and localized static assets.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 2. Tailored Design System
+
+Built around a high-contrast Neo-brutalist / Minimalist aesthetic:
+
+- **Typography:** Strict separation between display typeface (**Ubuntu Mono** for technical data and headers) and UI body prose (**Inter** for optimal scannability).
+- **Stateful Micro-interactions:** Fluid element transformations, click-press feedback, and component enter/exit states built natively to maintain low runtime overhead.
+
+---
+
+## 📁 System Blueprint
+
+```
+portfolio-front/
+├── src/
+│   ├── components/          # Stateless, atomic UI components (Form controls, Buttons, Modals)
+│   ├── context/             # Global application state wrappers (Toast notification orchestrator)
+│   ├── hooks/               # Decoupled business logic (Viewport triggers, animation states)
+│   ├── views/               # Layout structures and contextual viewport views
+│   │   └── Sections/        # Section-specific views (Hero, Technical Stack, History, Projects)
+│   ├── locales/            # Structured i18n dictionary resources (EN / ES / RU)
+│   ├── types/              # Domain-specific TypeScript interfaces and types
+│   ├── i18n.ts             # Internationalization bootstrap and client-side discovery logic
+│   └── index.css           # TailwindCSS entry point and design system tokens
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🚀 Deployment & Operations
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Local Workspace Setup
+
+```bash
+npm install
+npm run dev
 ```
+
+### Production Bundling
+
+Ensures code optimization, asset compilation, and strict TypeScript compilation verification.
+
+```bash
+npm run build
+```
+
+---
+
+## 👤 Executive Profile
+
+- **Author:** Igor Dzichkovskii
+- **Role:** Senior MERN Stack Developer
+- **Location:** Valencia, Spain
+- **GitHub:** [@CloudNine13](https://github.com/CloudNine13)
+- **LinkedIn:** [Igor Dzichkovskii](https://www.linkedin.com/in/igor-dzichkovskii/)

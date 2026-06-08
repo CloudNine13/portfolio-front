@@ -57,7 +57,9 @@
     "BUTTONS": {
       "GET_IN_TOUCH": "СВЯЗАТЬСЯ",
       "DOWNLOAD_CV": "СКАЧАТЬ_РЕЗЮМЕ"
-    }
+    },
+    "PDF_SUCCESS": "Резюме успешно скачано",
+    "PDF_ERROR": "Ошибка при скачивании резюме"
   },
   "FOOTER": {
     "COPYRIGHT": "©2026 Игорь Дзичковский",
@@ -71,6 +73,7 @@
     "SUBJECT_LABEL": "Тема",
     "MESSAGE_LABEL": "Сообщение",
     "SUBMIT_BUTTON": "Отправить",
+    "SUBMITTING": "Отправка...",
     "ERRORS": {
       "EMAIL_REQUIRED": "Email обязателен",
       "EMAIL_INVALID": "Пожалуйста, введите корректный email",

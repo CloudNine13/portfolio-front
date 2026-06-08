@@ -2,6 +2,34 @@ import { useState, useEffect, type MouseEvent, type SubmitEvent } from 'react';
 import { Button } from '../Button';
 import { useTranslation } from 'react-i18next';
 import { useToast, useTransitionState } from '@hooks';
+import {
+  modalOverlayStyle,
+  modalOverlayVisibleStyle,
+  modalOverlayHiddenStyle,
+  modalContainerStyle,
+  modalContainerVisibleStyle,
+  modalContainerHiddenStyle,
+  leftPanelStyle,
+  leftPanelFlexColStyle,
+  leftPanelFlex1Style,
+  titleStyle,
+  descriptionStyle,
+  statusSectionStyle,
+  statusRowStyle,
+  statusOnlineStyle,
+  statusOfflineStyle,
+  rightPanelStyle,
+  closeButtonStyle,
+  mobileTitleStyle,
+  formStyle,
+  formRowStyle,
+  formFieldStyle,
+  labelStyle,
+  inputStyle,
+  errorStyle,
+  textareaStyle,
+} from './SubmitForm.style';
+import { postForm } from '@api';
 
 type SubmitFormProps = {
   isOpen: boolean;
@@ -22,6 +50,7 @@ export default function SubmitForm({ isOpen, onClose }: SubmitFormProps) {
   const [name, setName] = useState('');
   const [errors, setErrors] = useState<{ email?: string; message?: string; name?: string }>({});
   const [isOnline, setIsOnline] = useState<boolean>(getOnlineStatus);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const { shouldRender, isVisible, handleTransitionEnd } = useTransitionState(isOpen);
   const { showToast } = useToast();
 
@@ -56,7 +85,7 @@ export default function SubmitForm({ isOpen, onClose }: SubmitFormProps) {
     return emailRegex.test(email);
   };
 
-  const handleSubmit = (e: SubmitEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
     const newErrors: { email?: string; message?: string } = {};
 
@@ -73,13 +102,10 @@ export default function SubmitForm({ isOpen, onClose }: SubmitFormProps) {
     setErrors(newErrors);
 
     if (Object.keys(newErrors).length === 0) {
-      console.log({ name, email, subject, message });
-      showToast({ type: 'ERROR' });
-      onClose();
-      setName('');
-      setEmail('');
-      setMessage('');
-      setSubject('');
+      setIsLoading(true);
+      await postForm({ data: { name, email, subject, message }, showToast }).then(() => {
+        setIsLoading(false);
+      });
     }
   };
 
@@ -93,57 +119,46 @@ export default function SubmitForm({ isOpen, onClose }: SubmitFormProps) {
 
   return (
     <div
-      className={`fixed inset-0 z-50 flex items-center justify-center bg-black/70 transition-opacity duration-300 ease-out ${
-        isVisible ? 'opacity-100' : 'opacity-0'
-      }`}
+      className={`${modalOverlayStyle} ${isVisible ? modalOverlayVisibleStyle : modalOverlayHiddenStyle}`}
       onClick={handleBackgroundClick}
       onTransitionEnd={handleTransitionEnd}
     >
       <div
-        className={`flex flex-row gap-10 justify-center transform transition-all duration-300 ease-out ${
-          isVisible ? 'scale-100 translate-y-0 opacity-100' : 'scale-95 translate-y-4 opacity-0'
-        }`}
+        className={`${modalContainerStyle} ${isVisible ? modalContainerVisibleStyle : modalContainerHiddenStyle}`}
       >
-        <div className="hidden md:block relative w-full max-w-sm bg-black p-6 border-4">
-          <div className="flex flex-col h-full">
-            <div className="flex-1">
-              <h1 className="text-7xl font-semibold uppercase leading-15 text-yellow font-display">
-                {t('TITLE')}
-              </h1>
-              <p className="uppercase text-md pt-8 text-white-secondary font-sans">
-                {t('DESCRIPTION')}
-              </p>
+        <div className={leftPanelStyle}>
+          <div className={leftPanelFlexColStyle}>
+            <div className={leftPanelFlex1Style}>
+              <h1 className={titleStyle}>{t('TITLE')}</h1>
+              <p className={descriptionStyle}>{t('DESCRIPTION')}</p>
             </div>
-            <div className="text-white-secondary tracking-widest uppercase flex flex-col gap-2">
-              <div className="flex justify-between border-b-2 border-white-secondary py-2">
+            <div className={statusSectionStyle}>
+              <div className={statusRowStyle}>
                 <span>Status:</span>
-                <span className={isOnline ? 'text-yellow' : 'text-red'}>
+                <span className={isOnline ? statusOnlineStyle : statusOfflineStyle}>
                   {isOnline ? 'Online' : 'Offline'}
                 </span>
               </div>
-              <div className="flex justify-between border-b-2 border-white-secondary py-2">
+              <div className={statusRowStyle}>
                 <span>Location:</span>
                 <span>Global</span>
               </div>
-              <div className="flex justify-between border-b-2 border-white-secondary py-2">
+              <div className={statusRowStyle}>
                 <span>Uptime:</span>
                 <span>99.9%</span>
               </div>
             </div>
           </div>
         </div>
-        <div className="relative md:w-full w-[95vw] max-w-xl bg-white p-6 border-4">
-          <button
-            onClick={onClose}
-            className="absolute top-0 right-2 text-gray-500 hover:text-black text-4xl font-bold cursor-pointer"
-          >
+        <div className={rightPanelStyle}>
+          <button onClick={onClose} className={closeButtonStyle}>
             ×
           </button>
-          <h2 className="block md:hidden text-2xl font-bold mb-4">{t('TITLE')}</h2>
-          <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-            <div className="flex flex-row gap-6 w-full">
-              <div className="flex-1">
-                <label htmlFor="name" className="block mb-1 font-display uppercase text-lg">
+          <h2 className={mobileTitleStyle}>{t('TITLE')}</h2>
+          <form onSubmit={handleSubmit} className={formStyle}>
+            <div className={formRowStyle}>
+              <div className={formFieldStyle}>
+                <label htmlFor="name" className={labelStyle}>
                   {t('NAME_LABEL')}
                 </label>
                 <input
@@ -151,13 +166,13 @@ export default function SubmitForm({ isOpen, onClose }: SubmitFormProps) {
                   id="name"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="w-full p-2 border-4 bg-white-secondary border-black focus:outline-none focus:border-yellow-500 text-sm transition-colors duration-400"
+                  className={inputStyle}
                 />
-                {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
+                {errors.name && <p className={errorStyle}>{errors.name}</p>}
               </div>
 
-              <div className="flex-1">
-                <label htmlFor="email" className="block mb-1 font-display uppercase text-lg">
+              <div className={formFieldStyle}>
+                <label htmlFor="email" className={labelStyle}>
                   {t('EMAIL_LABEL')} *
                 </label>
                 <input
@@ -165,14 +180,14 @@ export default function SubmitForm({ isOpen, onClose }: SubmitFormProps) {
                   id="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="w-full p-2 border-4 bg-white-secondary border-black focus:outline-none focus:border-yellow-500 text-sm transition-colors duration-400"
+                  className={inputStyle}
                 />
-                {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email}</p>}
+                {errors.email && <p className={errorStyle}>{errors.email}</p>}
               </div>
             </div>
 
             <div>
-              <label htmlFor="subject" className="block mb-1 font-display uppercase text-lg">
+              <label htmlFor="subject" className={labelStyle}>
                 {t('SUBJECT_LABEL')}
               </label>
               <input
@@ -180,12 +195,12 @@ export default function SubmitForm({ isOpen, onClose }: SubmitFormProps) {
                 id="subject"
                 value={subject}
                 onChange={(e) => setSubject(e.target.value)}
-                className="w-full p-2 border-4 bg-white-secondary border-black focus:outline-none focus:border-yellow-500 text-sm transition-colors duration-400"
+                className={inputStyle}
               />
             </div>
 
             <div>
-              <label htmlFor="message" className="block mb-1 font-display uppercase text-lg">
+              <label htmlFor="message" className={labelStyle}>
                 {t('MESSAGE_LABEL')} *
               </label>
               <textarea
@@ -193,9 +208,9 @@ export default function SubmitForm({ isOpen, onClose }: SubmitFormProps) {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 rows={5}
-                className="w-full p-2 border-4 bg-white-secondary border-black focus:outline-none focus:border-yellow-500 resize-none text-sm min-h-[25vh] md:min-h-[35vh] transition-colors duration-400"
+                className={textareaStyle}
               />
-              {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message}</p>}
+              {errors.message && <p className={errorStyle}>{errors.message}</p>}
             </div>
 
             <Button
@@ -206,8 +221,9 @@ export default function SubmitForm({ isOpen, onClose }: SubmitFormProps) {
               borderColor="border-black"
               hasShadow
               className="w-full py-2 uppercase"
+              disabled={isLoading}
             >
-              {t('SUBMIT_BUTTON')}
+              {isLoading ? t('SUBMITTING') : t('SUBMIT_BUTTON')}
             </Button>
           </form>
         </div>

@@ -13,7 +13,8 @@
       "@hooks": ["src/hooks"],
       "@assets": ["src/assets"],
       "@views": ["src/views"],
-      "@types": ["src/types"]
+      "@types": ["src/types"],
+      "@api": ["src/api"]
     },
 
     /* Bundler mode */

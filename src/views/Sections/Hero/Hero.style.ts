@@ -10,7 +10,7 @@ const nameStyle = 'text-3xl font-display tracking-tighter';
 const overlayIconStyle =
   'absolute -top-5 -right-5 bg-red text-white z-10 w-12 h-12 flex items-center justify-center border-4 border-black';
 const buttonContainerStyle = 'flex flex-col md:flex-row gap-5 items-center';
-const buttonStyle = 'min-w-80 md:min-w-fit min-h-12 md:min-h-fit';
+const buttonStyle = 'min-w-80 md:min-w-fit min-h-12 md:min-h-fit disabled:cursor-default';
 
 export {
   headerStyle,

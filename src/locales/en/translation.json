@@ -57,7 +57,9 @@
     "BUTTONS": {
       "GET_IN_TOUCH": "GET_IN_TOUCH",
       "DOWNLOAD_CV": "DOWNLOAD_CV"
-    }
+    },
+    "PDF_SUCCESS": "CV downloaded successfully",
+    "PDF_ERROR": "Failed to download CV"
   },
   "FOOTER": {
     "COPYRIGHT": "©2026 Igor Dzichkovskii",
@@ -71,6 +73,7 @@
     "SUBJECT_LABEL": "Subject",
     "MESSAGE_LABEL": "Message",
     "SUBMIT_BUTTON": "Send",
+    "SUBMITTING": "Sending...",
     "ERRORS": {
       "EMAIL_REQUIRED": "Email is required",
       "EMAIL_INVALID": "Please enter a valid email",
