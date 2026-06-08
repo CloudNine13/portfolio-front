@@ -30,7 +30,7 @@ export default function Dropdown({ options, value, onChange }: DropdownProps) {
   const handleSelect = (optionValue: string) => {
     onChange(optionValue);
     const selectedOption = options.find((opt) => opt.value === optionValue);
-    const displayValue = selectedOption.shorthand.toUpperCase() || '';
+    const displayValue = selectedOption?.shorthand?.toUpperCase() || '';
     setDisplayValue(displayValue);
     setIsOpen(false);
   };
