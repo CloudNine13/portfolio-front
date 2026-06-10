@@ -8,8 +8,9 @@ const projectsContainerStyle =
   'flex md:flex-row flex-col justify-center md:h-[90vh] h-auto md:gap-45 gap-20';
 const projectCardStyle = 'flex flex-col md:gap-3 gap-2';
 const projectTitleStyle = 'md:text-5xl text-3xl text-black font-bold font-display';
-const projectDescriptionStyle = 'md:text-xl text-md font-sans text-gray max-w-[475px] text-justify';
-const projectTechStyle = 'flex flex-row gap-2 w-fit whitespace-nowrap';
+const projectDescriptionStyle =
+  'md:text-xl text-md font-sans text-gray md:max-w-[475px] max-w-[340px] text-justify';
+const projectTechStyle = 'flex flex-row flex-wrap gap-2 w-fit md:max-w-[475px] max-w-[340px]';
 const projectTechItemStyle =
   'uppercase font-extrabold bg-white-secondary text-sm text-black font-sans border-3 w-fit px-2 py-1';
 

@@ -21,7 +21,7 @@ export default function Hero() {
     <div className={heroContainerStyle}>
       <div className={textContainerStyle}>
         <div className="md:text-left text-center">
-          <h1 className={headerStyle}>Senior</h1>
+          <h1 className={headerStyle}>Fullstack</h1>
           <h1 className={`${headerStyle} ${highlightStyle} inline-block mx-auto`}>MERN</h1>
           <h1 className={headerStyle}>Developer</h1>
         </div>
@@ -40,7 +40,7 @@ export default function Hero() {
         </div>
       </div>
       <div className={imageContainerStyle}>
-        <div className="relative inline-block w-[300px] h-[400px]">
+        <div className="relative inline-block md:w-[300px] w-[270px] h-[400px]">
           <div className={overlayIconStyle}>
             <Icon className="!text-[2rem]">terminal</Icon>
           </div>

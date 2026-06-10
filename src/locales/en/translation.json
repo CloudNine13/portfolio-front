@@ -19,7 +19,7 @@
     }
   },
   "TECH_SECTION": {
-    "SECTION_TITLE": "C0RE_STACK",
+    "SECTION_TITLE": "C0RE_\u200BSTACK",
     "MONGODB": "Implementing NoSQL (SQL included) Architecture & Schema design",
     "EXPRESS": "Creating Middleware & RESTful Systems",
     "REACT": "Declarative UI & State Flow Management",
@@ -41,14 +41,14 @@
     }
   },
   "PROJECTS_SECTION": {
-    "SECTION_TITLE": "FEATURED_PROJECTS",
+    "SECTION_TITLE": "FEATURED_\u200BPROJECTS",
     "DASHBOARD_TITLE": "Dashboard",
     "DASHBOARD_DESCRIPTION": "Trading info dashboard build with MERN stack for managing and visualizing trading data. Features include data updates, interactive charts, and user authentication. Built with React, TypeScript, Tailwind, Node.js, and Express.js.",
     "PAIN_TRACKER_TITLE": "Pain Tracker",
     "PAIN_TRACKER_DESCRIPTION": "Pain tracking application built with React, hl7 fhir, NestJS, and PostgreSQL. Features include pain level tracking, medication management, and patient history"
   },
   "CALL_TO_ACTION_SECTION": {
-    "START_A_BUILD": "START_A_BUILD?",
+    "START_A_BUILD": "START_\u200BA_BUILD?",
     "TEXT": {
       "LINE_1": "Let's build something amazing together!",
       "LINE_2": "Get in touch means benefit from the opportunity to collaborate.",

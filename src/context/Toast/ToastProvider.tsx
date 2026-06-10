@@ -5,7 +5,7 @@ import type { ToastType } from '@types';
 export type ToastState = {
   isOpen: boolean;
   type?: ToastType | '';
-  message: string;
+  message?: string;
 };
 
 export function ToastProvider({ children }: { children: ReactNode }) {
@@ -25,7 +25,7 @@ export function ToastProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const showToast = useCallback(
-    ({ message, type }: { message: string; type?: ToastType }) => {
+    ({ message, type }: { message?: string; type?: ToastType }) => {
       if (toast.isOpen) return;
       if (timeoutRef.current) {
         clearTimeout(timeoutRef.current);

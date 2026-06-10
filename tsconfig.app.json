@@ -1,20 +1,20 @@
 {
   "compilerOptions": {
+    "incremental": true,
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
-    "target": "es2023",
-    "lib": ["ES2023", "DOM"],
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM"],
     "module": "esnext",
     "types": ["vite/client"],
     "skipLibCheck": true,
-    "baseUrl": ".",
     "paths": {
-      "@components": ["src/components"],
-      "@context": ["src/context"],
-      "@hooks": ["src/hooks"],
-      "@assets": ["src/assets"],
-      "@views": ["src/views"],
-      "@types": ["src/types"],
-      "@api": ["src/api"]
+      "@components": ["./src/components"],
+      "@context": ["./src/context"],
+      "@hooks": ["./src/hooks"],
+      "@assets": ["./src/assets"],
+      "@views": ["./src/views"],
+      "@types": ["./src/types"],
+      "@api": ["./src/api"]
     },
 
     /* Bundler mode */
@@ -28,8 +28,7 @@
     /* Linting */
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"]
+  "include": ["./src"]
 }

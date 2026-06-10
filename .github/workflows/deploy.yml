@@ -1,4 +1,4 @@
-name: Frontend Production CD Pipeline
+name: Deploy to VPS
 
 on:
   push:
@@ -8,18 +8,28 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
 
-      - name: Execute Remote Deployment Commands via SSH
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ secrets.VPS_HOST }}
-          username: ${{ secrets.VPS_USERNAME }}
-          key: ${{ secrets.VPS_SSH_KEY }}
-          script: |
-            cd /var/www/portfolio/portfolio-front
-            git pull origin master
-            sudo docker compose up --build -d
-            sudo docker system prune -f
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Copy files to VPS
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.VPS_SSH_KEY }}
+          SSH_HOST: ${{ secrets.VPS_HOST }}
+          SSH_USER: ${{ secrets.VPS_USERNAME }}
+        run: |
+          mkdir -p ~/.ssh
+          echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H $SSH_HOST >> ~/.ssh/known_hosts
+          rsync -avz --delete --exclude='.git' --exclude='.github' ./ $SSH_USER@$SSH_HOST:/var/www/portfolio/portfolio-front/
+
+      - name: Rebuild Docker containers
+        env:
+          SSH_HOST: ${{ secrets.VPS_HOST }}
+          SSH_USER: ${{ secrets.VPS_USERNAME }}
+        run: |
+          ssh $SSH_USER@$SSH_HOST "cd /var/www/portfolio && \
+          (docker compose down --volumes --remove-orphans || true) && \
+          docker compose up --build -d"
